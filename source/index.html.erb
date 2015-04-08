@@ -109,7 +109,7 @@ THANK YOU MESSAGE = blah blah blah
   }
   #shares{
     width: 84%;
-    margin: 20px auto;
+    margin: 0px auto;
     padding: 5px 8%;
   }
   .left{
@@ -179,7 +179,9 @@ $(function(){
       alert('ACCEPT THE FUCKING RULES.');
     }
     else{
-
+      $('#shares').removeClass('hider');
+      $('.goog-inline-block').removeClass('hider');
+      $('#first-section').addClass('hider');
     }
   });
 });
@@ -275,75 +277,77 @@ $.getScript("http://platform.twitter.com/widgets.js", function(){
   <div class="ss-form">
     <form action="https://docs.google.com/a/trendsettermarketing.net/forms/d/1wlf_SJrVnipkE3z3qoee7byV8ggvQ67Ay2p4Jncyx7w/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="">
       <ol role="list" class="ss-question-list" style="padding-left: 0">
-        <!-- FIRST ITEM OPEN -->
-        <div class="ss-form-question errorbox-good" role="listitem">
-          <div dir="ltr" class="ss-item  ss-text">
-            <div class="ss-form-entry">
-              <input type="text" name="entry.749925490" value="" class="ss-q-short first-name" id="entry_749925490" dir="auto" aria-label="Input 1  " title="" placeholder="First Name">
-            </div>
-          </div>
-        </div>
-        <!-- FIRST ITEM CLOSE -->
-        <!-- SECOND ITEM OPEN -->
-        <div class="ss-form-question errorbox-good" role="listitem">
-          <div dir="ltr" class="ss-item  ss-text">
-            <div class="ss-form-entry">
-              <input type="text" name="entry.453795809" value="" class="ss-q-short last-name" id="entry_453795809" dir="auto" aria-label="Input 2  " title="" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <!-- SECOND ITEM CLOSE -->
-        <!-- THIRD ITEM OPEN -->
-        <div class="ss-form-question errorbox-good" role="listitem">
-          <div dir="ltr" class="ss-item  ss-text">
-            <div class="ss-form-entry">
-              <input type="text" name="entry.1493557255" value="" class="ss-q-short email-address" id="entry_1493557255" dir="auto" aria-label="Input 3  " title="" placeholder="Email Address">
-            </div>
-          </div>
-        </div>
-        <!-- THIRD ITEM CLOSE -->
-        <section id="legal">
-          <!-- Opt In -->
+        <section id="first-section">
+          <!-- FIRST ITEM OPEN -->
           <div class="ss-form-question errorbox-good" role="listitem">
-            <div dir="ltr" class="ss-item  ss-checkbox">
+            <div dir="ltr" class="ss-item  ss-text">
               <div class="ss-form-entry">
-                <ul class="ss-choices" role="group" aria-label="Opt In  ">
-                  <li class="ss-choice-item">
-                    <label>
-                      <span class="ss-choice-item-control goog-inline-block">
-                        <input type="checkbox" name="entry.583147646" value="I agree to receive emails" id="group_583147646_1" role="checkbox" class="ss-q-checkbox" checked="true">
-                      </span>
-                      <span class="ss-choice-label">I agree to receive emails from this record label yo.</span>
-                    </label>
-                  </li>
-                </ul>
+                <input type="text" name="entry.749925490" value="" class="ss-q-short first-name" id="entry_749925490" dir="auto" aria-label="Input 1  " title="" placeholder="First Name">
               </div>
             </div>
           </div>
-          <!-- End Opt In -->
-          <!-- Rules -->
+          <!-- FIRST ITEM CLOSE -->
+          <!-- SECOND ITEM OPEN -->
           <div class="ss-form-question errorbox-good" role="listitem">
-            <div dir="ltr" class="ss-item  ss-checkbox">
+            <div dir="ltr" class="ss-item  ss-text">
               <div class="ss-form-entry">
-                <ul class="ss-choices" role="group" aria-label="Agree to Rules  ">
-                  <li class="ss-choice-item">
-                    <label>
-                      <span class="ss-choice-item-control goog-inline-block">
-                        <input type="checkbox" name="entry.1082888376" value="I agree to the rules" id="group_1082888376_1" role="checkbox" class="ss-q-checkbox rules">
-                      </span>
-                      <span class="ss-choice-label">I agree to the <a href="#">rules</a>.</span>
-                    </label>
-                  </li>
-                </ul>
+                <input type="text" name="entry.453795809" value="" class="ss-q-short last-name" id="entry_453795809" dir="auto" aria-label="Input 2  " title="" placeholder="Last Name">
               </div>
             </div>
           </div>
-          <!-- End Rules -->
+          <!-- SECOND ITEM CLOSE -->
+          <!-- THIRD ITEM OPEN -->
+          <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="ltr" class="ss-item  ss-text">
+              <div class="ss-form-entry">
+                <input type="text" name="entry.1493557255" value="" class="ss-q-short email-address" id="entry_1493557255" dir="auto" aria-label="Input 3  " title="" placeholder="Email Address">
+              </div>
+            </div>
+          </div>
+          <!-- THIRD ITEM CLOSE -->
+          <section id="legal">
+            <!-- Opt In -->
+            <div class="ss-form-question errorbox-good" role="listitem">
+              <div dir="ltr" class="ss-item  ss-checkbox">
+                <div class="ss-form-entry">
+                  <ul class="ss-choices" role="group" aria-label="Opt In  ">
+                    <li class="ss-choice-item">
+                      <label>
+                        <span class="ss-choice-item-control goog-inline-block">
+                          <input type="checkbox" name="entry.583147646" value="I agree to receive emails" id="group_583147646_1" role="checkbox" class="ss-q-checkbox" checked="true">
+                        </span>
+                        <span class="ss-choice-label">I agree to receive emails from this record label yo.</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- End Opt In -->
+            <!-- Rules -->
+            <div class="ss-form-question errorbox-good" role="listitem">
+              <div dir="ltr" class="ss-item  ss-checkbox">
+                <div class="ss-form-entry">
+                  <ul class="ss-choices" role="group" aria-label="Agree to Rules  ">
+                    <li class="ss-choice-item">
+                      <label>
+                        <span class="ss-choice-item-control goog-inline-block">
+                          <input type="checkbox" name="entry.1082888376" value="I agree to the rules" id="group_1082888376_1" role="checkbox" class="ss-q-checkbox rules">
+                        </span>
+                        <span class="ss-choice-label">I agree to the <a href="#">rules</a>.</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- End Rules -->
+          </section>
+          <div class="contest-btn next">
+            NEXT →
+          </div>
         </section>
-        <div class="contest-btn next">
-          NEXT →
-        </div>
-        <section id="shares" class="">
+        <section id="shares" class="hider">
           <h4 class="sharehead">Share this page to complete your entry</h4>
           <!-- FACEBOOK SHARE -->
           <!-- button  -->
@@ -411,7 +415,7 @@ $.getScript("http://platform.twitter.com/widgets.js", function(){
           <table id="navigation-table">
             <tbody>
               <tr>
-                <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                <td class="ss-form-entry goog-inline-block hider" id="navigation-buttons" dir="ltr">
                   <input type="submit" name="submit" value="Submit" id="ss-submit" class="jfk-button jfk-button-action contest-btn">
                 </td>
               </tr>
