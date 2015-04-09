@@ -33,6 +33,8 @@ FACEBOOK CHECK ID = 701792494
 TWITTER CHECK ID = 1730686214
 
 THANK YOU MESSAGE = blah blah blah
+
+rules URL
 -->
 
 
@@ -110,7 +112,7 @@ THANK YOU MESSAGE = blah blah blah
   #shares{
     width: 84%;
     margin: 0px auto;
-    padding: 5px 8%;
+    padding: 0 8%;
   }
   .left{
     width: 50%;
@@ -153,6 +155,21 @@ THANK YOU MESSAGE = blah blah blah
     margin-top: 20px;
     font-size: 12px;
   }
+  .form-error{
+    font-size: 12px;
+    color: red;
+  }
+  .check-wrap{
+    margin: 5px auto;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  }
+  .checkmark{
+    width: 50px;
+    background-color: white;
+    border-radius: 4px;
+  }
 </style>
 
 
@@ -167,26 +184,40 @@ $(function(){
     var dotpos = eMail.lastIndexOf(".");
 
     if($('.first-name').val().length < 1){
-      alert('give me your fucking name.');
+      $('.form-error').html('Please enter your first name.');
     }
     else if($('.last-name').val().length < 1){
-      alert('last name mofucka.');
+      $('.form-error').html('Please enter your last name.');
     }
     else if(atpos< 1 || dotpos<atpos+2 || dotpos+2>=eMail.length){
-      alert('email dicklips.');
+      $('.form-error').html('Please enter a valid email address.');
     }
     else if(!$('.rules').prop('checked')){
-      alert('ACCEPT THE FUCKING RULES.');
+      $('.form-error').html('Please agree to the rules.');
     }
     else{
       $('#shares').removeClass('hider');
       $('.goog-inline-block').removeClass('hider');
       $('#first-section').addClass('hider');
+      $('.form-error').html('');
     }
   });
 });
 </script>
 
+<!-- validate shares -->
+<script>
+function validateShare(){
+  if (shareCount < 2){
+    $('.form-error').html('Please complete both shares.');
+    return false;
+  }
+  else{
+    submitted = true;
+  }
+
+}
+</script>
 
 
 <!-- FACEBOOK SHIT -->
@@ -212,6 +243,11 @@ function fbShare(){
       $('.fb-check').prop('checked', true);
       $('.fbclick').hide();
       $('.right').css({'width':'100%','margin-left':'0'});
+      $('.form-error').html('');
+      shareCount = shareCount + 1
+      if (shareCount == 2){
+        $('.check-wrap').removeClass('hider');
+      }
     } else {
       // unsuccessful share
       $('.fb-check').prop('checked', false);
@@ -261,6 +297,11 @@ $.getScript("http://platform.twitter.com/widgets.js", function(){
         $('.tw-check').prop('checked', true);
         $('.right').hide();
         $('.left').css({'width':'100%'});
+        $('.form-error').html('');
+        shareCount = shareCount + 1
+        if (shareCount == 2){
+          $('.check-wrap').removeClass('hider');
+        }
      }
    }
    twttr.events.bind('tweet', handleTweetEvent);
@@ -269,13 +310,14 @@ $.getScript("http://platform.twitter.com/widgets.js", function(){
 
 <!-- GOOGLE SHIT -->
 <!-- Form -->
-<script type="text/javascript">var submitted=true;</script>
+<script type="text/javascript">var submitted=false; var shareCount=0;</script>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
   onload="if(submitted) {$('.ss-form').html('<h2 class=\'thanks\'>Thanks for entering!</h2>');}"></iframe>
 
 <div id="contest-wrapper">
+  <p class="form-error"><p>
   <div class="ss-form">
-    <form action="https://docs.google.com/a/trendsettermarketing.net/forms/d/1wlf_SJrVnipkE3z3qoee7byV8ggvQ67Ay2p4Jncyx7w/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="">
+    <form action="https://docs.google.com/a/trendsettermarketing.net/forms/d/1wlf_SJrVnipkE3z3qoee7byV8ggvQ67Ay2p4Jncyx7w/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="validateShare();">
       <ol role="list" class="ss-question-list" style="padding-left: 0">
         <section id="first-section">
           <!-- FIRST ITEM OPEN -->
@@ -405,8 +447,14 @@ $.getScript("http://platform.twitter.com/widgets.js", function(){
             </div>
           </div>
           <!-- END twitter SHARE -->
+          <!-- Checkmark -->
+          <div class="check-wrap hider">
+            <img class="checkmark" src="/images/check-mark.png">
+            <p>You may now submit your entry.</p>
+          </div>
+          <!-- end Checkmark -->
           </br>
-          <small>*Entries are not recorded until both shares are completed.</small>
+          <small>*Entries will not count unless both shares are completed.</small>
         </section>
         <input type="hidden" name="draftResponse" value="[,,&quot;4687543796847312923&quot;]">
         <input type="hidden" name="pageHistory" value="0">
