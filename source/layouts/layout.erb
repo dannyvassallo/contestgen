@@ -11,8 +11,9 @@
 
   <body class="<%= page_classes %>">
     <%= yield %>
-    <%= javascript_include_tag  "all" %>
 
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <%= javascript_include_tag  "all" %>
     <!-- INITIALIZE THE PLUGIN YO -->
     <script type="text/javascript">
       $("#contest").shareWidgetContest({
