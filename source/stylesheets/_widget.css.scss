@@ -1,0 +1,132 @@
+#contest-wrapper{
+  max-width: 200px;
+  margin: 0 auto;
+  font-family: "Helvetica", sans-serif;
+  // Inner Elements
+  h4{
+    font-size: 16px;
+  }
+  .hider{
+    display:none;
+  }
+  .btn-wrap{
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn-wrap p{
+    margin: 5px auto;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  }
+  .btn-wrap a{
+    text-decoration: none;
+  }
+  .btn-wrap:hover, .btn-wrap:active{
+    opacity:.5;
+    color: #fff;
+  }
+  .fbbtn{
+    background-image: url(../images/FB-f-Logo__blue_50.png);
+  }
+  .twbtn{
+    background-image: url(../images/tw-btn.png);
+  }
+  .fbbtn, .twbtn{
+    margin: 0 auto;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid white;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.7);
+  }
+  #shares{
+    width: 84%;
+    margin: 0px auto;
+    padding: 0 8%;
+  }
+  .left{
+    width: 50%;
+    float: left;
+  }
+  .right{
+    margin-left: 50%;
+  }
+  #legal{
+    margin-top: 5px;
+    text-align: left;
+  }
+  .contest-btn{
+    text-align: center;
+    width: 100% !important;
+    padding: 10px 20px !important;
+    background-color: #3c8ecc;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #3c9ce4;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.7);
+    text-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    font-size: 14px;
+    max-width: 98px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 auto;
+    font-family: sans-serif;
+  }
+  .sharehead, .thanks{
+    color: white;
+    text-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    text-align: center;
+  }
+  small{
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  .form-error{
+    font-size: 12px;
+    color: red;
+  }
+  .check-wrap{
+    margin: 5px auto;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+    text-align: center;
+  }
+  .checkmark{
+    width: 50px;
+    background-color: white;
+    border-radius: 4px;
+  }
+  /* gform-tweaks */
+  .ss-q-checkbox{
+    width: auto !important;
+  }
+  .ss-form input{
+    width: 84%;
+    max-width: 1170px;
+    border-radius: 4px;
+    padding: 5px 8%;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .ss-choices{
+    padding: 0;
+    font-size: 12px;
+  }
+  .ss-choice-item{
+    list-style: none;
+    margin-bottom: 5px;
+  }
+  .ss-choice-label{
+  }
+  #navigation-table{
+    margin: 0 auto;
+  }
+  #navigation-buttons{
+    width: 142px;
+  }
+  // End Inner Elements
+}
