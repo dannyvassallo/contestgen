@@ -7,6 +7,8 @@ Use this plugin to create share contests for email capture. It has built in vali
 
 Attach this plugin beneath jQuery. Initialize it by placing the following just before your closing ```</body>``` tag and following the two previously mentioned scripts.
 
+####Facebook images should be at least 600x315 in order to show a fullsize feed photo.
+
 ```javascript
 <script type="text/javascript">
   $("#contest").shareContestTW({
