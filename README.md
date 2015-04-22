@@ -11,7 +11,7 @@ Attach this plugin beneath jQuery. Initialize it by placing the following just b
 
 ```javascript
 <script type="text/javascript">
-  $("#contest").shareContestTW({
+  $("#contest").shareContest({
     context: {
       fbAppId: "[YOUR-FB-APP-ID]",
       fbShareTitle: "This is the Facebook Share Title",
@@ -42,6 +42,22 @@ Attach this plugin beneath jQuery. Initialize it by placing the following just b
 Then place the following anywhere on your page:
 ```html
 <div id="contest"></div>
+```
+
+The previous initialize function will give you a facebook share AND a twitter share. Alternately you may use the following with the same "context:":
+
+####Just Twitter
+```javascript
+<script>
+$("#contest").shareContestTW({...});
+</script>
+```
+
+####Just Facebook
+```javascript
+<script>
+$("#contest").shareContestFB({...});
+</script>
 ```
 
 The plugin will do the rest for you.
